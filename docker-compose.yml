@@ -1,0 +1,14 @@
+version: '3'
+services:
+
+  thunar:
+    build: .
+    network_mode: host
+    environment:
+      - DISPLAY
+    volumes:
+      - /:/mnt/host
+      - ${HOME}/.Xauthority:/root/.Xauthority
+    command: 
+      - thunar
+
